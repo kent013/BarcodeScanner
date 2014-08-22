@@ -297,8 +297,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       case KeyEvent.KEYCODE_BACK:
         if (source == IntentSource.NATIVE_APP_INTENT) {
           if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
-            setResult(RESULT_CANCELED);
-          	finish();
+            //setResult(RESULT_CANCELED);
+          	//finish();
           }
           return true;
         }
