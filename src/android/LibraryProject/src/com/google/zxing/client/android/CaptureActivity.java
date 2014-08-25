@@ -296,10 +296,10 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     switch (keyCode) {
       case KeyEvent.KEYCODE_BACK:
         if (source == IntentSource.NATIVE_APP_INTENT) {
-          setResult(RESULT_CANCELED);
           if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
-              finish();
+            setResult(RESULT_CANCELED);
           }
+          finish();
           return true;
         }
         if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
