@@ -298,8 +298,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         if (source == IntentSource.NATIVE_APP_INTENT) {
           if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
             setResult(RESULT_CANCELED);
+            finish();
           }
-          finish();
           return true;
         }
         if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
