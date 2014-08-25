@@ -156,12 +156,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     PreferenceManager.setDefaultValues(this, fakeR.getId("xml", "preferences"), false);
 
     //showHelpOnFirstLaunch();
-    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-    alertDialogBuilder.setTitle("タイトル");
-    alertDialogBuilder.setMessage("メッセージ");
-    alertDialogBuilder.setCancelable(true);
-    AlertDialog alertDialog = alertDialogBuilder.create();
-    alertDialog.show();
   }
 
   @Override
@@ -299,19 +293,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
   @Override
   public boolean onKeyDown(int keyCode, KeyEvent event) {
-      AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-      alertDialogBuilder.setTitle("タイトル");
-      alertDialogBuilder.setMessage("メッセージ");
-      alertDialogBuilder.setCancelable(true);
-      AlertDialog alertDialog = alertDialogBuilder.create();
-      alertDialog.show();
     switch (keyCode) {
       case KeyEvent.KEYCODE_BACK:
         if (source == IntentSource.NATIVE_APP_INTENT) {
           if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
             setResult(RESULT_CANCELED);
-          	finish();
           }
+          finish();
           return true;
         }
         if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
