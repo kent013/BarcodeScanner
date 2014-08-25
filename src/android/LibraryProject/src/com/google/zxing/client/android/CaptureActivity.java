@@ -303,7 +303,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
           return true;
         }
         if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
-          restartPreviewAfterDelay(0L);
+          //restartPreviewAfterDelay(0L);
           return true;
         }
         break;
