@@ -27,7 +27,6 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.provider.Browser;
@@ -117,7 +116,6 @@ public final class ShareActivity extends Activity {
     intent.putExtra(Intents.Encode.TYPE, Contents.Type.TEXT);
     intent.putExtra(Intents.Encode.DATA, text);
     intent.putExtra(Intents.Encode.FORMAT, BarcodeFormat.QR_CODE.toString());
-    
     startActivity(intent);
   }
 
