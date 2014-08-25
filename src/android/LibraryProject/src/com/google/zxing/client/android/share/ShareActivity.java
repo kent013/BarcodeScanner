@@ -23,7 +23,6 @@ import com.google.zxing.client.android.Intents;
 import com.google.zxing.client.android.R;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -120,26 +119,6 @@ public final class ShareActivity extends Activity {
     intent.putExtra(Intents.Encode.FORMAT, BarcodeFormat.QR_CODE.toString());
     
     startActivity(intent);
-  }
-  
-
-  @Override
-  public boolean onKeyDown(int keyCode, KeyEvent event) {
-	    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-	    alertDialogBuilder.setTitle("タイトル");
-	    alertDialogBuilder.setMessage("メッセージ2");
-	    alertDialogBuilder.setCancelable(true);
-	    AlertDialog alertDialog = alertDialogBuilder.create();
-	    alertDialog.show();
-    switch (keyCode) {
-      case KeyEvent.KEYCODE_BACK:
-          if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
-            setResult(RESULT_CANCELED);
-          }
-          finish();
-          return true;
-    }
-    return super.onKeyDown(keyCode, event);
   }
 
   @Override

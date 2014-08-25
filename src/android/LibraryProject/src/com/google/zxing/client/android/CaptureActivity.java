@@ -156,7 +156,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     PreferenceManager.setDefaultValues(this, fakeR.getId("xml", "preferences"), false);
 
     //showHelpOnFirstLaunch();
-    System.out.println("mogemoge");
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+    alertDialogBuilder.setTitle("タイトル");
+    alertDialogBuilder.setMessage("メッセージ");
+    alertDialogBuilder.setCancelable(true);
+    AlertDialog alertDialog = alertDialogBuilder.create();
+    alertDialog.show();
   }
 
   @Override
@@ -294,9 +299,14 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
   @Override
   public boolean onKeyDown(int keyCode, KeyEvent event) {
+      AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+      alertDialogBuilder.setTitle("タイトル");
+      alertDialogBuilder.setMessage("メッセージ");
+      alertDialogBuilder.setCancelable(true);
+      AlertDialog alertDialog = alertDialogBuilder.create();
+      alertDialog.show();
     switch (keyCode) {
       case KeyEvent.KEYCODE_BACK:
-    	  System.out.println("もげもげーら！！！！");
         if (source == IntentSource.NATIVE_APP_INTENT) {
           if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
             setResult(RESULT_CANCELED);
