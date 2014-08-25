@@ -294,20 +294,19 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   @Override
   public boolean onKeyDown(int keyCode, KeyEvent event) {
     switch (keyCode) {
-      /*case KeyEvent.KEYCODE_BACK:
-        if (source == IntentSource.NATIVE_APP_INTENT) {
-          setResult(RESULT_CANCELED);
-          finish();
-          if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
-        	  return true;
+      case KeyEvent.KEYCODE_BACK:
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
+          if (source == IntentSource.NATIVE_APP_INTENT) {
+            setResult(RESULT_CANCELED);
+            finish();
+        	return true;
           }
-          return false;
+          if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
+            restartPreviewAfterDelay(0L);
+            return true;
+          }
         }
-        if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
-          restartPreviewAfterDelay(0L);
-          return true;
-        }
-        break;*/
+        break;
       case KeyEvent.KEYCODE_FOCUS:
       case KeyEvent.KEYCODE_CAMERA:
         // Handle these events so they don't launch the Camera app
