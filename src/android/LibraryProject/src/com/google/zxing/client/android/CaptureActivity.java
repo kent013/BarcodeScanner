@@ -156,6 +156,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     PreferenceManager.setDefaultValues(this, fakeR.getId("xml", "preferences"), false);
 
     //showHelpOnFirstLaunch();
+    System.out.println("mogemoge");
   }
 
   @Override
