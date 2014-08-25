@@ -295,15 +295,16 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   public boolean onKeyDown(int keyCode, KeyEvent event) {
     switch (keyCode) {
       case KeyEvent.KEYCODE_BACK:
+    	  System.out.println("もげもげーら！！！！");
         if (source == IntentSource.NATIVE_APP_INTENT) {
           if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT){
-            //setResult(RESULT_CANCELED);
-          	//finish();
+            setResult(RESULT_CANCELED);
+          	finish();
           }
           return true;
         }
         if ((source == IntentSource.NONE || source == IntentSource.ZXING_LINK) && lastResult != null) {
-          //restartPreviewAfterDelay(0L);
+          restartPreviewAfterDelay(0L);
           return true;
         }
         break;

@@ -120,13 +120,6 @@ public final class ShareActivity extends Activity {
     intent.putExtra(Intents.Encode.FORMAT, BarcodeFormat.QR_CODE.toString());
     
     startActivity(intent);
-
-    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-    alertDialogBuilder.setTitle("タイトル");
-    alertDialogBuilder.setMessage("メッセージ１");
-    alertDialogBuilder.setCancelable(true);
-    AlertDialog alertDialog = alertDialogBuilder.create();
-    alertDialog.show();
   }
   
 
